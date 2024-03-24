@@ -34,7 +34,7 @@ class Email {
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola ". $this->nombre . "</strong> Has Creado tu cuenta en UpTask solo resta confirmarla haciendo click en este enlace </p>";
-        $contenido .= "<p>Hacé click acá: <a href='='" . $_ENV['HOST'] . "/confirmar?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
+        $contenido .= "<p>Hacé click acá: <a href='=" . $_ENV['HOST'] . "/confirmar?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
         $contenido .= "<p>Si no creaste esta cuenta, podés ignorar este mensaje</p>";
         $contenido .= "</html>";
 
