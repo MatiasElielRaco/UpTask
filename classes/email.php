@@ -26,15 +26,15 @@ class Email {
         $mail->Password = $_ENV["EMAIL_PASS"];
 
         $mail->setFrom("no-reply@uptask.com");
-        $mail->addAddress("cuentas@uptask.com", "uptask.com");
+        $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = "Confirma tu Cuenta";
 
         $mail->isHTML(TRUE);
         $mail->CharSet = "UTF-8";
 
         $contenido = "<html>";
-        $contenido .= "<p><strong>Hola ". $this->nombre . "</strong> Has Creado tu cuenta en UpTask solo resta confirmarla haciendo click en este enlace </p>";
-        $contenido .= "<p>Hacé click acá: <a href='=" . $_ENV['HOST'] . "/confirmar?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
+        $contenido .= "<p><strong>Hola " . $this->nombre . "</strong>. Has Creado tu cuenta en UpTask solo resta confirmarla haciendo click en este enlace </p>";
+        $contenido .= "<p>Hacé click acá: <a href='" . $_ENV['HOST'] . "/confirmar?token=" . $this->token . "'>Confirmar Cuenta</a></p>";
         $contenido .= "<p>Si no creaste esta cuenta, podés ignorar este mensaje</p>";
         $contenido .= "</html>";
 
@@ -54,8 +54,8 @@ class Email {
         $mail->Username = $_ENV["EMAIL_USER"];
         $mail->Password = $_ENV["EMAIL_PASS"];
 
-        $mail->setFrom("cuentas@uptask.com");
-        $mail->addAddress("cuentas@uptask.com", "uptask.com");
+        $mail->setFrom("no-reply@uptask.com");
+        $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = "Reestablece tu Contraseña";
 
         $mail->isHTML(TRUE);
