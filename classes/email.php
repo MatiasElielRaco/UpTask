@@ -63,7 +63,7 @@ class Email {
 
         $contenido = "<html>";
         $contenido .= "<p><strong>Hola ". $this->nombre . "</strong> Solicitaste un cambio de contraseña, hacé click en el siguiente enlance para modificarla </p>";
-        $contenido .= "<p>Hacé click acá: <a href='='" . $_ENV['HOST'] . "/reestablecer?token=" . $this->token . "'> Reestablecer tu Contraseña </a></p>";
+        $contenido .= "<p>Hacé click acá: <a href='" . $_ENV['HOST'] . "/reestablecer?token=" . $this->token . "'> Reestablecer tu Contraseña </a></p>";
         $contenido .= "<p>Si no solicitaste este cambio de contraseña, podés ignorar este mensaje</p>";
         $contenido .= "</html>";
 
