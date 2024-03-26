@@ -84,7 +84,7 @@ class LoginController {
                 $resultado = $usuario->guardar();
 
                 // Enviar email
-                $email = new Email($usuario->email, $usuario->nombre,$usuario->token);
+                $email = new email($usuario->email, $usuario->nombre,$usuario->token);
                 $email->enviarConfirmacion();
 
                 if($resultado) {
@@ -120,7 +120,7 @@ class LoginController {
                     $usuario->guardar();
 
                     // Enviar el email
-                    $email = new Email($usuario->email,$usuario->nombre,$usuario->token);
+                    $email = new email($usuario->email,$usuario->nombre,$usuario->token);
                     $email->enviarInstrucciones();
 
                     // Imprimir la alerta
